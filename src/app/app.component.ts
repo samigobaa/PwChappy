@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { LoginComponent } from './componants/login/login.component';
 import { HomeComponent } from './componants/home/home.component';
 import { HeaderComponent } from './componants/header/header.component';
@@ -16,7 +16,8 @@ import { LeftSidebarComponent } from './componants/left-sidebar/left-sidebar.com
     HeaderComponent,
     FooterComponent,
     TopBarComponent,
-    
+    RouterLink
+
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
