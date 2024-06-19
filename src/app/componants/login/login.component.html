@@ -40,7 +40,7 @@
 							</div>
 							<a href="#" title="" class="forgot-pwd">Forgot Password?</a>
 							<div class="submit-btns">
-								<button class="mtr-btn signin" type="button"><span>Login</span></button>
+								<button class="mtr-btn signin" type="button" (click)="onLogin()"><span>Login</span></button>
 								<button class="mtr-btn signup" type="button"><span>Register</span></button>
 							</div>
 						</form>
@@ -59,7 +59,8 @@
 							</div>
 							<div
 								*ngIf="((signuForm.controls['firstLastname'].invalid)&&(signuForm.controls['firstLastname'].touched || signuForm.controls['firstLastname'].dirty))">
-								<div *ngIf="signuForm.controls['firstLastname'].errors?.['required']" class="errorMessage">
+								<div *ngIf="signuForm.controls['firstLastname'].errors?.['required']"
+									class="errorMessage">
 									required *
 								</div>
 							</div>
@@ -74,12 +75,27 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<input type="password" required="required" />
+								<input type="password" required="required" formControlName="userPassword" />
 								<label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
+							</div>
+							<div
+								*ngIf="((signuForm.controls['userPassword'].invalid)&&(signuForm.controls['userPassword'].touched || signuForm.controls['userPassword'].dirty))">
+								<div *ngIf="signuForm.controls['userPassword'].errors?.['required']"
+									class="errorMessage">
+									required *
+								</div>
+								<div *ngIf="signuForm.controls['userPassword'].errors?.['pattern']"
+									class="errorMessage">
+									At least 8 characters in length,
+									Lowercase letters,
+									Uppercase letters,
+									Numbers,
+									Special characters
+								</div>
 							</div>
 							<div class="form-radio">
 								<div class="radio">
-									<label>
+									<label> 
 										<input type="radio" name="radio" checked="checked" /><i
 											class="check-box"></i>Male
 									</label>
@@ -92,8 +108,7 @@
 							</div>
 							<div class="form-group">
 								<input type="email" formControlName="userEmail" required="required" />
-								<label class="control-label" >Email</label><i
-									class="mtrl-select"></i>
+								<label class="control-label">Email</label><i class="mtrl-select"></i>
 							</div>
 							<div
 								*ngIf="((signuForm.controls['userEmail'].invalid)&&(signuForm.controls['userEmail'].touched || signuForm.controls['userEmail'].dirty))">
@@ -101,7 +116,7 @@
 									required *
 								</div>
 								<div *ngIf="signuForm.controls['userEmail'].errors?.['email']" class="errorMessage">
-									Email error 
+									Email error
 								</div>
 							</div>
 							<div class="checkbox">
@@ -112,7 +127,7 @@
 							</div>
 							<a href="#" title="" class="already-have">Already have an account</a>
 							<div class="submit-btns">
-								<button class="mtr-btn signup" type="button"><span>Register</span></button>
+								<button class="mtr-btn signup" type="button" (click)="addUser()"><span>Register</span></button>
 							</div>
 						</form>
 					</div>

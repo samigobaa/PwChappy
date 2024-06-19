@@ -6,6 +6,7 @@ import { HeaderComponent } from './componants/header/header.component';
 import { FooterComponent } from './componants/footer/footer.component';
 import { TopBarComponent } from './componants/top-bar/top-bar.component';
 import { LeftSidebarComponent } from './componants/left-sidebar/left-sidebar.component';
+import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ import { LeftSidebarComponent } from './componants/left-sidebar/left-sidebar.com
     HeaderComponent,
     FooterComponent,
     TopBarComponent,
-    RouterLink
+    RouterLink,
+    HttpClientModule
 
   ],
   templateUrl: './app.component.html',
