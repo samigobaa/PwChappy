@@ -5,8 +5,8 @@
 			<span class="mh-btns-left">
 				<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
 			</span>
-			<span class="">
-				<a routerLink="" title=""><img src="assets/images/happy.png" alt=""></a>
+			<span class="mh-text">
+				<a href="newsfeed.html" title=""><img src="assets/images/logo2.png" alt=""></a>
 			</span>
 			<span class="mh-btns-right">
 				<a class="fa fa-sliders" href="#shoppingbag"></a>
@@ -24,64 +24,11 @@
 	
 	<div class="topbar stick">
 		<div class="logo">
-			<a title="" href="newsfeed.html"><img src="assets/images/logo.png" alt=""></a>
+			<a title="" routerLink="login" ><img src="assets/images/happy.png" alt="" style="width: 60%;height: 60%;"></a>
 		</div>
 		
 		<div class="top-area">
-			<ul class="main-menu">
-				<li>
-					<a href="#" title="">Home</a>
-					<ul>
-						<li><a href="index-2.html" title="">Home Social</a></li>
-						<li><a href="index2.html" title="">Home Social 2</a></li>
-						<li><a href="index-company.html" title="">Home Company</a></li>
-						<li><a href="landing.html" title="">Login page</a></li>
-						<li><a href="logout.html" title="">Logout Page</a></li>
-						<li><a href="newsfeed.html" title="">news feed</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#" title="">timeline</a>
-					<ul>
-						<li><a href="time-line.html" title="">timeline</a></li>
-						<li><a href="timeline-friends.html" title="">timeline friends</a></li>
-						<li><a href="timeline-groups.html" title="">timeline groups</a></li>
-						<li><a href="timeline-pages.html" title="">timeline pages</a></li>
-						<li><a href="timeline-photos.html" title="">timeline photos</a></li>
-						<li><a href="timeline-videos.html" title="">timeline videos</a></li>
-						<li><a href="fav-page.html" title="">favourit page</a></li>
-						<li><a href="groups.html" title="">groups page</a></li>
-						<li><a href="page-likers.html" title="">Likes page</a></li>
-						<li><a href="people-nearby.html" title="">people nearby</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#" title="">account settings</a>
-					<ul>
-						<li><a href="create-fav-page.html" title="">create fav page</a></li>
-						<li><a href="edit-account-setting.html" title="">edit account setting</a></li>
-						<li><a href="edit-interest.html" title="">edit-interest</a></li>
-						<li><a href="edit-password.html" title="">edit-password</a></li>
-						<li><a href="edit-profile-basic.html" title="">edit profile basics</a></li>
-						<li><a href="edit-work-eductation.html" title="">edit work educations</a></li>
-						<li><a href="messages.html" title="">message box</a></li>
-						<li><a href="inbox.html" title="">Inbox</a></li>
-						<li><a href="notifications.html" title="">notifications page</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#" title="">more pages</a>
-					<ul>
-						<li><a href="404.html" title="">404 error page</a></li>
-						<li><a href="about.html" title="">about</a></li>
-						<li><a href="contact.html" title="">contact</a></li>
-						<li><a href="faq.html" title="">faq's page</a></li>
-						<li><a href="insights.html" title="">insights</a></li>
-						<li><a href="knowledge-base.html" title="">knowledge base</a></li>
-						<li><a href="widgets.html" title="">Widgts</a></li>
-					</ul>
-				</li>
-			</ul>
+			
 			<ul class="setting-area">
 				<li>
 					<a href="#" title="Home" data-ripple=""><i class="ti-search"></i></a>
@@ -239,7 +186,7 @@
 					<a href="#" title=""><span class="status f-online"></span>online</a>
 					<a href="#" title=""><span class="status f-away"></span>away</a>
 					<a href="#" title=""><span class="status f-off"></span>offline</a>
-					<a href="#" title=""><i class="ti-user"></i> view profile</a>
+					<a routerLink="/profil" title=""><i class="ti-user"></i> view profile</a>
 					<a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a>
 					<a href="#" title=""><i class="ti-target"></i>activity log</a>
 					<a href="#" title=""><i class="ti-settings"></i>account setting</a>
@@ -248,19 +195,53 @@
 			</div>
 			<span class="ti-menu main-menu" data-ripple=""></span>
 		</div>
-	</div><!-- topbar -->	
-		
+	</div><!-- topbar -->
+	
 	<section>
-		<div class="page-header">
-			<div class="header-inner">
-				<h2>ALL Users</h2>
-				<nav class="breadcrumb">
-				  <a href="index-2.html" class="breadcrumb-item"><i class="fa fa-home"></i></a>
-				  <span class="breadcrumb-item active"></span>
-				</nav>
+			<div class="feature-photo">
+				<figure><img src="assets/images/resources/timeline-1.jpg" alt=""></figure>
+				<div class="add-btn">
+					<span>1205 followers</span>
+					<a href="#" title="" data-ripple="">Add Friend</a>
+				</div>
+				<form class="edit-phto">
+					<i class="fa fa-camera-retro"></i>
+					<label class="fileContainer">
+						Edit Cover Photo
+					<input type="file"/>
+					</label>
+				</form>
+				<div class="container-fluid">
+					<div class="row merged">
+						<div class="col-lg-2 col-sm-3">
+							<div class="user-avatar">
+								<figure>
+									<img src="assets/images/resources/user-avatar.jpg" alt="">
+									<form class="edit-phto">
+										<i class="fa fa-camera-retro"></i>
+										<label class="fileContainer">
+											Edit Display Photo
+											<input type="file"/>
+										</label>
+									</form>
+								</figure>
+							</div>
+						</div>
+						<div class="col-lg-10 col-sm-9">
+							<div class="timeline-info">
+								<ul>
+									<li class="admin-name">
+									  <h5>Janice Griffith</h5>
+									  <span>Group Admin</span>
+									</li>
+								
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section><!-- top area -->
 		
 	<section>
 		<div class="gap gray-bg">
@@ -270,49 +251,40 @@
 						<div class="row" id="page-contents">
 							<div class="col-lg-3">
 								<aside class="sidebar static">
-									
-									<div class="widget stick-widget">
+									<div class="widget">
 										<h4 class="widget-title">Shortcuts</h4>
 										<ul class="naves">
 											<li>
 												<i class="ti-clipboard"></i>
-												<a href="newsfeed.html" title="">News feed</a>
+												<a routerLink="/" title="">News feed</a>
 											</li>
 											<li>
 												<i class="ti-mouse-alt"></i>
-												<a href="inbox.html" title="">Inbox</a>
+												<a routerLink="/inbox" title="">Inbox</a>
 											</li>
 											<li>
 												<i class="ti-files"></i>
-												<a href="fav-page.html" title="">My pages</a>
+												<a routerLink="/pages" title="">My pages</a>
 											</li>
 											<li>
 												<i class="ti-user"></i>
-												<a href="timeline-friends.html" title="">friends</a>
+												<a routerLink="/friends" title="">friends</a>
 											</li>
 											<li>
 												<i class="ti-image"></i>
-												<a href="timeline-photos.html" title="">images</a>
+												<a routerLink="/photos" title="">images</a>
 											</li>
 											<li>
 												<i class="ti-video-camera"></i>
-												<a href="timeline-videos.html" title="">videos</a>
+												<a routerLink="/videos" title="">videos</a>
 											</li>
 											<li>
 												<i class="ti-comments-smiley"></i>
-												<a href="messages.html" title="">Messages</a>
+												<a routerLink="/messages" title="">Messages</a>
 											</li>
 											<li>
 												<i class="ti-bell"></i>
-												<a href="notifications.html" title="">Notifications</a>
-											</li>
-											<li>
-												<i class="ti-share"></i>
-												<a href="people-nearby.html" title="">People Nearby</a>
-											</li>
-											<li>
-												<i class="fa fa-bar-chart-o"></i>
-												<a href="insights.html" title="">insights</a>
+												<a routerLink="/notification" title="">Notifications</a>
 											</li>
 											<li>
 												<i class="ti-power-off"></i>
@@ -320,40 +292,6 @@
 											</li>
 										</ul>
 									</div><!-- Shortcuts -->
-									
-
-								</aside>
-							</div><!-- sidebar -->
-							<div class="col-lg-6">
-								<div class="central-meta">
-									<div class="nearby-pepl">
-										<div class="nearby-map">
-											<div id="map-canvas"></div>
-										</div>
-									</div><!-- near by map -->
-									<ul class="nearby-contct">
-                                        @for(user of users;track user){
-										<li>
-											<div class="nearly-pepls">
-												<figure>
-													<a href="time-line.html" title=""><img src="assets/images/resources/friend-avatar9.jpg" alt=""></a>
-												</figure>
-												<div class="pepl-info">
-													<h4><a href="time-line.html" title="">{{user.firstandlastname}}</a></h4>
-													<span>ftv model</span>
-													<em><i class="fa fa-map-marker"></i>400m away</em>
-													
-                                                    <button class="btn-danger ml-5">Delete User</button>
-                                                    <button class="btn-warning ml-5">Update User</button>
-                                                </div>
-											</div>
-										</li>
-                                    }
-									</ul>
-								</div><!-- photos -->
-							</div><!-- centerl meta -->
-							<div class="col-lg-3">
-								<aside class="sidebar static">
 									<div class="widget">
 										<h4 class="widget-title">Who's follownig</h4>
 										<ul class="followers">
@@ -394,7 +332,279 @@
 											</li>
 										</ul>
 									</div><!-- who's following -->
-									<div class="widget friend-list stick-widget">
+									
+
+								</aside>
+							</div><!-- sidebar -->
+							<div class="col-lg-6">
+								<div class="central-meta">
+									<div class="groups">
+										<span><i class="fa fa-file-text-o"></i> Your Liked Pages</span>
+									</div>
+									<ul class="liked-pages">
+										<li>
+											<div class="f-page">
+												<figure>
+													<a href="#" title=""><img src="assets/images/resources/page1.jpg" alt=""></a>
+													<div class="dropdown pgs">
+														<button class="btn dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<i class="ti-check"></i>liked
+														  </button>
+														  <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+															<button class="dropdown-item" type="button">Dislike</button>
+														  </div>
+													</div>
+													<em>1039 likes</em>
+												</figure>
+												<div class="page-infos">
+													<h5><a href="#" title="">Romantic couples</a></h5>
+													<span><a href="#" title="">Love</a></span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="f-page">
+												<figure>
+													<a href="#" title=""><img src="assets/images/resources/page2.jpg" alt=""></a>
+													<div class="dropdown pgs">
+														<button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<i class="ti-check"></i>liked
+														  </button>
+														  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+															<button class="dropdown-item" type="button">Dislike</button>
+														  </div>
+													</div>
+													<em>103K likes</em>
+												</figure>
+												<div class="page-infos">
+													<h5><a href="#" title="">Factory shop</a></h5>
+													<span><a href="#" title="">Business & finance</a></span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="f-page">
+												<figure>
+													<a href="#" title=""><img src="assets/images/resources/page3.jpg" alt=""></a>
+													<div class="dropdown pgs">
+														<button class="btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<i class="ti-check"></i>liked
+														  </button>
+														  <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+															<button class="dropdown-item" type="button">Dislike</button>
+														  </div>
+													</div>
+													<em>1.4k likes</em>
+												</figure>
+												<div class="page-infos">
+													<h5><a href="#" title="">Euro grils</a></h5>
+													<span><a href="#" title="">Fun</a></span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="f-page">
+												<figure>
+													<a href="#" title=""><img src="assets/images/resources/page4.jpg" alt=""></a>
+													<div class="dropdown pgs">
+														<button class="btn dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<i class="ti-check"></i>liked
+														  </button>
+														  <div class="dropdown-menu" aria-labelledby="dropdownMenu4">
+															<button class="dropdown-item" type="button">Dislike</button>
+														  </div>
+													</div>
+													<em>1039 likes</em>
+												</figure>
+												<div class="page-infos">
+													<h5><a href="#" title="">Dreamers</a></h5>
+													<span><a href="#" title="">Public figure</a></span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="f-page">
+												<figure>
+													<a href="#" title=""><img src="assets/images/resources/page5.jpg" alt=""></a>
+													<div class="dropdown pgs">
+														<button class="btn dropdown-toggle" type="button" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<i class="ti-check"></i>liked
+														  </button>
+														  <div class="dropdown-menu" aria-labelledby="dropdownMenu5">
+															<button class="dropdown-item" type="button">Dislike</button>
+														  </div>
+													</div>
+													<em>139 likes</em>
+												</figure>
+												<div class="page-infos">
+													<h5><a href="#" title="">Lonely Girl</a></h5>
+													<span><a href="#" title="">Public & friends</a></span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="f-page">
+												<figure>
+													<a href="#" title=""><img src="assets/images/resources/page6.jpg" alt=""></a>
+													<div class="dropdown pgs">
+														<button class="btn dropdown-toggle" type="button" id="dropdownMenu6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<i class="ti-check"></i>liked
+														  </button>
+														  <div class="dropdown-menu" aria-labelledby="dropdownMenu6">
+															<button class="dropdown-item" type="button">Dislike</button>
+														  </div>
+													</div>
+													<em>13M likes</em>
+												</figure>
+												<div class="page-infos">
+													<h5><a href="#" title="">Art School</a></h5>
+													<span><a href="#" title="">Art & Entertainment</a></span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="f-page">
+												<figure>
+													<a href="#" title=""><img src="assets/images/resources/page7.jpg" alt=""></a>
+													<div class="dropdown pgs">
+														<button class="btn dropdown-toggle" type="button" id="dropdownMenu7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<i class="ti-check"></i>liked
+														  </button>
+														  <div class="dropdown-menu" aria-labelledby="dropdownMenu7">
+															<button class="dropdown-item" type="button">Dislike</button>
+														  </div>
+													</div>
+													<em>13M likes</em>
+												</figure>
+												<div class="page-infos">
+													<h5><a href="#" title="">Baby Care</a></h5>
+													<span><a href="#" title="">Family & personal</a></span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="f-page">
+												<figure>
+													<a href="#" title=""><img src="assets/images/resources/page8.jpg" alt=""></a>
+													<div class="dropdown pgs">
+														<button class="btn dropdown-toggle" type="button" id="dropdownMenu8" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<i class="ti-check"></i>liked
+														  </button>
+														  <div class="dropdown-menu" aria-labelledby="dropdownMenu8">
+															<button class="dropdown-item" type="button">Dislike</button>
+														  </div>
+													</div>
+													<em>13M likes</em>
+												</figure>
+												<div class="page-infos">
+													<h5><a href="#" title="">My city lovers</a></h5>
+													<span><a href="#" title="">Travel & tour</a></span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="f-page">
+												<figure>
+													<a href="#" title=""><img src="assets/images/resources/page4.jpg" alt=""></a>
+													<div class="dropdown pgs">
+														<button class="btn dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<i class="ti-check"></i>liked
+														  </button>
+														  <div class="dropdown-menu" aria-labelledby="dropdownMenu4">
+															<button class="dropdown-item" type="button">Dislike</button>
+														  </div>
+													</div>
+													<em>1039 likes</em>
+												</figure>
+												<div class="page-infos">
+													<h5><a href="#" title="">School Girls</a></h5>
+													<span><a href="#" title="">Public figure</a></span>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<div class="lodmore"><button class="btn-view btn-load-more"></button></div>
+								</div><!-- photos -->
+							</div><!-- centerl meta -->
+							<div class="col-lg-3">
+								<aside class="sidebar static">
+									<div class="widget">
+											<h4 class="widget-title">Your page</h4>	
+											<div class="your-page">
+												<figure>
+													<a title="" href="#"><img alt="" src="assets/images/resources/friend-avatar9.jpg"></a>
+												</figure>
+												<div class="page-meta">
+													<a class="underline" title="" href="#">My page</a>
+													<span><i class="ti-comment"></i>Messages <em>9</em></span>
+													<span><i class="ti-bell"></i>Notifications <em>2</em></span>
+												</div>
+												<div class="page-likes">
+													<ul class="nav nav-tabs likes-btn">
+														<li class="nav-item"><a data-toggle="tab" href="#link1" class="active">likes</a></li>
+														 <li class="nav-item"><a data-toggle="tab" href="#link2" class="">views</a></li>
+													</ul>
+													<!-- Tab panes -->
+													<div class="tab-content">
+													  <div id="link1" class="tab-pane active fade show">
+														<span><i class="ti-heart"></i>884</span>
+														  <a title="weekly-likes" href="#">35 new likes this week</a>
+														  <div class="users-thumb-list">
+														  	<a data-toggle="tooltip" title="" href="#" data-original-title="Anderw">
+																<img alt="" src="assets/images/resources/userlist-1.jpg">  
+															</a>
+															<a data-toggle="tooltip" title="" href="#" data-original-title="frank">
+																<img alt="" src="assets/images/resources/userlist-2.jpg">  
+															</a>
+															<a data-toggle="tooltip" title="" href="#" data-original-title="Sara">
+																<img alt="" src="assets/images/resources/userlist-3.jpg">  
+															</a>
+															<a data-toggle="tooltip" title="" href="#" data-original-title="Amy">
+																<img alt="" src="assets/images/resources/userlist-4.jpg">  
+															</a>
+															<a data-toggle="tooltip" title="" href="#" data-original-title="Ema">
+																<img alt="" src="assets/images/resources/userlist-5.jpg">  
+															</a>
+															<a data-toggle="tooltip" title="" href="#" data-original-title="Sophie">
+																<img alt="" src="assets/images/resources/userlist-6.jpg">  
+															</a>
+															<a data-toggle="tooltip" title="" href="#" data-original-title="Maria">
+																<img alt="" src="assets/images/resources/userlist-7.jpg">  
+															</a>  
+														  </div>
+													  </div>
+													  <div id="link2" class="tab-pane fade">
+														  <span><i class="ti-eye"></i>445</span>
+														  <a title="weekly-likes" href="#">440 new views this week</a>
+														  <div class="users-thumb-list">
+														  	<a data-toggle="tooltip" title="" href="#" data-original-title="Anderw">
+																<img alt="" src="assets/images/resources/userlist-1.jpg">  
+															</a>
+															<a data-toggle="tooltip" title="" href="#" data-original-title="frank">
+																<img alt="" src="assets/images/resources/userlist-2.jpg">  
+															</a>
+															<a data-toggle="tooltip" title="" href="#" data-original-title="Sara">
+																<img alt="" src="assets/images/resources/userlist-3.jpg">  
+															</a>
+															<a data-toggle="tooltip" title="" href="#" data-original-title="Amy">
+																<img alt="" src="assets/images/resources/userlist-4.jpg">  
+															</a>
+															<a data-toggle="tooltip" title="" href="#" data-original-title="Ema">
+																<img alt="" src="assets/images/resources/userlist-5.jpg">  
+															</a>
+															<a data-toggle="tooltip" title="" href="#" data-original-title="Sophie">
+																<img alt="" src="assets/images/resources/userlist-6.jpg">  
+															</a>
+															<a data-toggle="tooltip" title="" href="#" data-original-title="Maria">
+																<img alt="" src="assets/images/resources/userlist-7.jpg">  
+															</a>  
+														  </div>
+													  </div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="widget friend-list stick-widget">
 										<h4 class="widget-title">Friends</h4>
 										<div id="searchDir"></div>
 										<ul id="people-list" class="friendz-list">
@@ -405,7 +615,7 @@
 												</figure>
 												<div class="friendz-meta">
 													<a href="time-line.html">bucky barnes</a>
-													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="addac4c3d9c8dfdec2c1c9c8dfedcac0ccc4c183cec2c0">[email&#160;protected]</a></i>
+													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2057494e544552534f4c44455260474d41494c0e434f4d">[email&#160;protected]</a></i>
 												</div>
 											</li>
 											<li>
@@ -415,7 +625,7 @@
 												</figure>
 												<div class="friendz-meta">
 													<a href="time-line.html">Sarah Loren</a>
-													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5d3f3c2f33382e1d3a303c3431733e3230">[email&#160;protected]</a></i>
+													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5634372438332516313b373f3a7835393b">[email&#160;protected]</a></i>
 												</div>
 											</li>
 											<li>
@@ -425,7 +635,7 @@
 												</figure>
 												<div class="friendz-meta">
 													<a href="time-line.html">jason borne</a>
-													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="741e15071b1a16341319151d185a171b19">[email&#160;protected]</a></i>
+													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="016b60726e6f6341666c60686d2f626e6c">[email&#160;protected]</a></i>
 												</div>
 											</li>
 											<li>
@@ -435,7 +645,7 @@
 												</figure>
 												<div class="friendz-meta">
 													<a href="time-line.html">Cameron diaz</a>
-													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f993988a96979bb99e94989095d79a9694">[email&#160;protected]</a></i>
+													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="731912001c1d1133141e121a1f5d101c1e">[email&#160;protected]</a></i>
 												</div>
 											</li>
 											<li>
@@ -446,7 +656,7 @@
 												</figure>
 												<div class="friendz-meta">
 													<a href="time-line.html">daniel warber</a>
-													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="157f74667a7b77557278747c793b767a78">[email&#160;protected]</a></i>
+													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b6dcd7c5d9d8d4f6d1dbd7dfda98d5d9db">[email&#160;protected]</a></i>
 												</div>
 											</li>
 											<li>
@@ -457,7 +667,7 @@
 												</figure>
 												<div class="friendz-meta">
 													<a href="time-line.html">andrew</a>
-													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f09a91839f9e92b0979d91999cde939f9d">[email&#160;protected]</a></i>
+													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95fff4e6fafbf7d5f2f8f4fcf9bbf6faf8">[email&#160;protected]</a></i>
 												</div>
 											</li>
 											<li>
@@ -468,7 +678,7 @@
 												</figure>
 												<div class="friendz-meta">
 													<a href="time-line.html">amy watson</a>
-													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e38982908c8d81a3848e828a8fcd808c8e">[email&#160;protected]</a></i>
+													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9bf1fae8f4f5f9dbfcf6faf2f7b5f8f4f6">[email&#160;protected]</a></i>
 												</div>
 											</li>
 											<li>
@@ -479,7 +689,7 @@
 												</figure>
 												<div class="friendz-meta">
 													<a href="time-line.html">daniel warber</a>
-													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="274d465448494567404a464e4b0944484a">[email&#160;protected]</a></i>
+													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="452f24362a2b27052228242c296b262a28">[email&#160;protected]</a></i>
 												</div>
 											</li>
 											<li>
@@ -490,7 +700,7 @@
 												</figure>
 												<div class="friendz-meta">
 													<a href="time-line.html">Sarah Loren</a>
-													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0b696a79656e784b6c666a626725686466">[email&#160;protected]</a></i>
+													<i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="197b786b777c6a597e74787075377a7674">[email&#160;protected]</a></i>
 												</div>
 											</li>
 										</ul>
@@ -651,67 +861,3 @@
 		</div>
 	</div>
 </div>
-	<div class="side-panel">
-			<h4 class="panel-title">General Setting</h4>
-			<form method="post">
-				<div class="setting-row">
-					<span>use night mode</span>
-					<input type="checkbox" id="nightmode1"/> 
-					<!-- <label for="nightmode1" data-on-label="ON" data-off-label="OFF"></label> -->
-				</div>
-				<div class="setting-row">
-					<span>Notifications</span>
-					<input type="checkbox" id="switch22" /> 
-					<!-- <label for="switch22" data-on-label="ON" data-off-label="OFF"></label> -->
-				</div>
-				<div class="setting-row">
-					<span>Notification sound</span>
-					<input type="checkbox" id="switch33" /> 
-					<!-- <label for="switch33" data-on-label="ON" data-off-label="OFF"></label> -->
-				</div>
-				<div class="setting-row">
-					<span>My profile</span>
-					<input type="checkbox" id="switch44" /> 
-					<!-- <label for="switch44" data-on-label="ON" data-off-label="OFF"></label> -->
-				</div>
-				<div class="setting-row">
-					<span>Show profile</span>
-					<input type="checkbox" id="switch55" /> 
-					<!-- <label for="switch55" data-on-label="ON" data-off-label="OFF"></label> -->
-				</div>
-			</form>
-			<h4 class="panel-title">Account Setting</h4>
-			<form method="post">
-				<div class="setting-row">
-					<span>Sub users</span>
-					<input type="checkbox" id="switch66" /> 
-					<!-- <label for="switch66" data-on-label="ON" data-off-label="OFF"></label> -->
-				</div>
-				<div class="setting-row">
-					<span>personal account</span>
-					<input type="checkbox" id="switch77" /> 
-					<!-- <label for="switch77" data-on-label="ON" data-off-label="OFF"></label> -->
-				</div>
-				<div class="setting-row">
-					<span>Business account</span>
-					<input type="checkbox" id="switch88" /> 
-					<!-- <label for="switch88" data-on-label="ON" data-off-label="OFF"></label> -->
-				</div>
-				<div class="setting-row">
-					<span>Show me online</span>
-					<input type="checkbox" id="switch99" /> 
-					<!-- <label for="switch99" data-on-label="ON" data-off-label="OFF"></label> -->
-				</div>
-				<div class="setting-row">
-					<span>Delete history</span>
-					<input type="checkbox" id="switch101" /> 
-					<!-- <label for="switch101" data-on-label="ON" data-off-label="OFF"></label> -->
-				</div>
-				<div class="setting-row">
-					<span>Expose author name</span>
-					<input type="checkbox" id="switch111" /> 
-					<!-- <label for="switch111" data-on-label="ON" data-off-label="OFF"></label> -->
-				</div>
-			</form>
-		</div><!-- side panel -->	
-	

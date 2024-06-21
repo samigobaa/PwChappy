@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-admin-panel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './admin-panel.component.html',
   styleUrl: './admin-panel.component.css'
 })

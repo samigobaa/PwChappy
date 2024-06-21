@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-messages',
+  selector: 'app-photos',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './messages.component.html',
-  styleUrl: './messages.component.css'
+  templateUrl: './photos.component.html',
+  styleUrl: './photos.component.css'
 })
-export class MessagesComponent {
+export class PhotosComponent {
 
 }

@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { Subscription } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { TimeLineComponent } from '../time-line/time-line.component';
+import { PhotosComponent } from '../photos/photos.component';
+import { ShortcutsComponent } from '../shortcuts/shortcuts.component';
 
 @Component({
   selector: 'app-profil',
   standalone: true,
-  imports: [],
+  imports: [TimeLineComponent,RouterLink,PhotosComponent,ShortcutsComponent],
   templateUrl: './profil.component.html',
   styleUrl: './profil.component.css'
 })

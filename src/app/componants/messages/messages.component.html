@@ -1,1 +1,333 @@
-<p>messages works!</p>
+
+<div class="theme-layout">
+	
+	<div class="responsive-header">
+		<div class="mh-head first Sticky">
+			<span class="mh-btns-left">
+				<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
+			</span>
+			<span class="mh-text">
+				<a href="newsfeed.html" title=""><img src="assets/images/happy.png" alt="" style="width: 60%;height: 60%;"></a>
+			</span>
+			<span class="mh-btns-right">
+				<a class="fa fa-sliders" href="#shoppingbag"></a>
+			</span>
+		</div>
+		<div class="mh-head second">
+			<form class="mh-form">
+				<input placeholder="search" />
+				<a href="#/" class="fa fa-search"></a>
+			</form>
+		</div>
+		
+		
+	</div><!-- responsive header -->
+	
+	<div class="topbar stick">
+		<div class="logo">
+			<a title="" routerLink="/"><img src="assets/images/happy.png" alt="" style="width: 60%;height: 60%;"></a>
+		</div>
+		
+		<div class="top-area">
+			
+			<ul class="setting-area">
+				<li>
+					<a href="#" title="Home" data-ripple=""><i class="ti-search"></i></a>
+					<div class="searched">
+						<form method="post" class="form-search">
+							<input type="text" placeholder="Search Friend">
+							<button data-ripple><i class="ti-search"></i></button>
+						</form>
+					</div>
+				</li>
+				<li><a routerLink="/" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
+				<li>
+					<a href="#" title="Notification" data-ripple="">
+						<i class="ti-bell"></i><span>20</span>
+					</a>
+					<div class="dropdowns">
+						<span>4 New Notifications</span>
+						<ul class="drops-menu">
+							<li>
+								<a href="notifications.html" title="">
+									<img src="assets/images/resources/thumb-1.jpg" alt="">
+									<div class="mesg-meta">
+										<h6>sarah Loren</h6>
+										<span>Hi, how r u dear ...?</span>
+										<i>2 min ago</i>
+									</div>
+								</a>
+								<span class="tag green">New</span>
+							</li>
+						</ul>
+						<a href="notifications.html" title="" class="more-mesg">view more</a>
+					</div>
+				</li>
+				<li>
+					<a href="#" title="Messages" data-ripple=""><i class="ti-comment"></i><span>12</span></a>
+					<div class="dropdowns">
+						
+						<ul class="drops-menu">
+							<li>
+								<a href="notifications.html" title="">
+									<img src="assets/images/resources/thumb-1.jpg" alt="">
+									<div class="mesg-meta">
+										<h6>sarah Loren</h6>
+										<span>Hi, how r u dear ...?</span>
+										<i>2 min ago</i>
+									</div>
+								</a>
+								<span class="tag green">New</span>
+							</li>
+						
+						</ul>
+						<a href="messages.html" title="" class="more-mesg">view more</a>
+					</div>
+				</li>
+				<li><a href="#" title="Languages" data-ripple=""><i class="fa fa-globe"></i></a>
+					<div class="dropdowns languages">
+						<a href="#" title=""><i class="ti-check"></i>English</a>
+						<a href="#" title="">Arabic</a>
+						<a href="#" title="">Dutch</a>
+						<a href="#" title="">French</a>
+					</div>
+				</li>
+			</ul>
+			<div class="user-img">
+				<img src="assets/images/resources/admin.jpg" alt="">
+				<span class="status f-online"></span>
+				<div class="user-setting">
+					<a href="#" title=""><span class="status f-online"></span>online</a>
+					<a href="#" title=""><span class="status f-away"></span>away</a>
+					<a href="#" title=""><span class="status f-off"></span>offline</a>
+					<a href="#" title=""><i class="ti-user"></i> view profile</a>
+					<a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a>
+					<a href="#" title=""><i class="ti-target"></i>activity log</a>
+					<a href="#" title=""><i class="ti-settings"></i>account setting</a>
+					<a href="#" title=""><i class="ti-power-off"></i>log out</a>
+				</div>
+			</div>
+			<span class="ti-menu main-menu" data-ripple=""></span>
+		</div>
+	</div><!-- topbar -->
+	
+	
+
+	<section>
+		<div class="gap gray-bg">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row" id="page-contents">
+							<div class="col-lg-3">
+								<aside class="sidebar static">
+									
+									<div class="widget">
+										<h4 class="widget-title">Shortcuts</h4>
+										<ul class="naves">
+											<li>
+												<i class="ti-clipboard"></i>
+												<a routerLink="/" title="">News feed</a>
+											</li>
+											<li>
+												<i class="ti-mouse-alt"></i>
+												<a routerLink="/inbox" title="">Inbox</a>
+											</li>
+											<li>
+												<i class="ti-files"></i>
+												<a routerLink="/pages" title="">My pages</a>
+											</li>
+											<li>
+												<i class="ti-user"></i>
+												<a routerLink="/friends" title="">friends</a>
+											</li>
+											<li>
+												<i class="ti-image"></i>
+												<a routerLink="/photos" title="">images</a>
+											</li>
+											<li>
+												<i class="ti-video-camera"></i>
+												<a routerLink="/videos" title="">videos</a>
+											</li>
+											<li>
+												<i class="ti-comments-smiley"></i>
+												<a routerLink="/messages" title="">Messages</a>
+											</li>
+											<li>
+												<i class="ti-bell"></i>
+												<a routerLink="/notification" title="">Notifications</a>
+											</li>
+											<li>
+												<i class="ti-power-off"></i>
+												<a href="landing.html" title="">Logout</a>
+											</li>
+										</ul>
+									</div><!-- Shortcuts -->										
+								</aside>
+							</div><!-- sidebar -->
+                            <div class="col-lg-6">
+								<div class="central-meta">
+									<div class="messages">
+										<h5 class="f-title"><i class="ti-bell"></i>All Messages <span class="more-options"><i class="fa fa-ellipsis-h"></i></span></h5>
+										<div class="message-box">
+											<ul class="peoples">
+												
+												<li>
+													
+													<figure>
+														<img src="assets/images/resources/friend-avatar2.jpg" alt="">
+														<span class="status f-online"></span>
+													</figure>
+													<div class="people-name">
+														<span>Molly cyrus</span>
+													</div>
+												</li>
+												<li>
+													
+													<figure><img src="assets/images/resources/friend-avatar3.jpg" alt="">
+														<span class="status f-away"></span>
+													</figure>
+													<div class="people-name">
+														<span>Andrew</span>
+													</div>
+												</li>
+												<li>
+													
+													<figure>
+														<img src="assets/images/resources/friend-avatar.jpg" alt="">
+														<span class="status f-online"></span>
+													</figure>
+													
+													<div class="people-name">
+														<span>jason bourne</span>
+													</div>
+												</li>
+												<li>
+													
+													<figure><img src="assets/images/resources/friend-avatar4.jpg" alt="">
+														<span class="status off-online"></span>
+													</figure>
+													<div class="people-name">
+														<span>Sarah Grey</span>
+													</div>
+												</li>
+												<li>
+													
+													<figure><img src="assets/images/resources/friend-avatar5.jpg" alt="">
+														<span class="status f-online"></span>
+													</figure>
+													<div class="people-name">
+														<span>bill doe</span>
+													</div>
+												</li>
+												<li>
+													
+													<figure><img src="assets/images/resources/friend-avatar6.jpg" alt="">
+														<span class="status f-away"></span>
+													</figure>
+													<div class="people-name">
+														<span>shen cornery</span>
+													</div>
+												</li>
+												<li>
+													
+													<figure><img src="assets/images/resources/friend-avatar7.jpg" alt="">
+														<span class="status off-online"></span>
+													</figure>
+													<div class="people-name">
+														<span>kill bill</span>
+													</div>
+												</li>
+												<li>
+													
+													<figure><img src="assets/images/resources/friend-avatar8.jpg" alt="">
+														<span class="status f-online"></span>
+													</figure>
+													<div class="people-name">
+														<span>jasmin walia</span>
+													</div>
+												</li>
+												<li>
+													
+													<figure><img src="assets/images/resources/friend-avatar6.jpg" alt="">
+														<span class="status f-online"></span>
+													</figure>
+													<div class="people-name">
+														<span>neclos cage</span>
+													</div>
+												</li>
+											</ul>
+											<div class="peoples-mesg-box">
+												<div class="conversation-head">
+													<figure><img src="assets/images/resources/friend-avatar.jpg" alt=""></figure>
+													<span>jason bourne <i>online</i></span>
+												</div>
+												<ul class="chatting-area">
+													<li class="you">
+														<figure><img src="assets/images/resources/userlist-2.jpg" alt=""></figure>
+														<p>what's liz short for? :)</p>
+													</li>
+													<li class="me">
+														<figure><img src="assets/images/resources/userlist-1.jpg" alt=""></figure>
+														<p>Elizabeth lol</p>
+													</li>
+													<li class="me">
+														<figure><img src="assets/images/resources/userlist-1.jpg" alt=""></figure>
+														<p>wanna know whats my second guess was?</p>
+													</li>
+													<li class="you">
+														<figure><img src="assets/images/resources/userlist-2.jpg" alt=""></figure>
+														<p>yes</p>
+													</li>
+													<li class="me">
+														<figure><img src="assets/images/resources/userlist-1.jpg" alt=""></figure>
+														<p>Disney's the lizard king</p>
+													</li>
+													<li class="me">
+														<figure><img src="assets/images/resources/userlist-1.jpg" alt=""></figure>
+														<p>i know him 5 years ago</p>
+													</li>
+													<li class="you">
+														<figure><img src="assets/images/resources/userlist-2.jpg" alt=""></figure>
+														<p>coooooooooool dude ;)</p>
+													</li>
+												</ul>
+												<div class="message-text-container">
+													<form method="post">
+														<textarea></textarea>
+														<button title="send"><i class="fa fa-paper-plane"></i></button>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>	
+							</div>
+							<!-- centerl meta -->
+							<div class="col-lg-3">
+								<aside class="sidebar static">
+									
+									<div class="widget stick-widget">
+										<h4 class="widget-title">Who's follownig</h4>
+										<ul class="followers">
+											<li>
+												<figure><img src="assets/images/resources/friend-avatar2.jpg" alt=""></figure>
+												<div class="friend-meta">
+													<h4><a href="time-line.html" title="">Kelly Bill</a></h4>
+													<a href="#" title="" class="underline">Add Friend</a>
+												</div>
+											</li>
+										
+										</ul>
+									</div><!-- who's following -->
+								</aside>
+							</div><!-- sidebar -->
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>	
+	</section>
+
+
+	

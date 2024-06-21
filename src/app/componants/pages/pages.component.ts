@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-messages',
+  selector: 'app-pages',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './messages.component.html',
-  styleUrl: './messages.component.css'
+  templateUrl: './pages.component.html',
+  styleUrl: './pages.component.css'
 })
-export class MessagesComponent {
+export class PagesComponent {
 
 }

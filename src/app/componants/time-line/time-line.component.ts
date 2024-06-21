@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-messages',
+  selector: 'app-time-line',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './messages.component.html',
-  styleUrl: './messages.component.css'
+  templateUrl: './time-line.component.html',
+  styleUrl: './time-line.component.css'
 })
-export class MessagesComponent {
+export class TimeLineComponent {
 
 }

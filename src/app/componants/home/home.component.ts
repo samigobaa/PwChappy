@@ -12,6 +12,7 @@ import { ShortcutsComponent } from '../shortcuts/shortcuts.component';
 import { PublicationComponent } from '../publication/publication.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { SidePanelComponent } from '../side-panel/side-panel.component';
+import { ProfilComponent } from '../profil/profil.component';
 
 @Component({
   selector: 'app-home',
@@ -28,6 +29,7 @@ import { SidePanelComponent } from '../side-panel/side-panel.component';
     ShortcutsComponent,
     PublicationComponent,
     SidebarComponent,
+    ProfilComponent,
     SidePanelComponent
   ],
   templateUrl: './home.component.html',
