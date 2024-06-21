@@ -12,7 +12,7 @@ import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,
-    LoginComponent,
+    
     HomeComponent,
     HeaderComponent,
     FooterComponent,

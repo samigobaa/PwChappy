@@ -1,130 +1,90 @@
 const express = require('express');
 const { Pool } = require('pg');
 const bodyParser = require('body-parser');
-const bcrypt =require('bcrypt')
+const bcrypt = require('bcrypt');  // Ajout de bcrypt
+const cors = require('cors');  // Ajout de CORS
+const jwt = require('jsonwebtoken');
 const app = express();
-const jwt=require('jsonwebtoken')
 const port = 3000;
-const cors = require('cors');
-// Parse JSON bodies
+
+// Middleware pour parser les corps de requête JSON
 app.use(bodyParser.json());
-app.use(cors({
-    origin: 'http://localhost:4200' 
-}));
+app.use(cors());  // Utilisation de CORS
 
-// PostgreSQL configuration
+// Configuration de PostgreSQL
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'PwChappy',
-    password: 'postgresql',
-    port: 5432, // default PostgreSQL port
+  user: 'postgres',
+  host: 'localhost',
+  database: 'PwChappy',
+  password: 'postgresql',
+  port: 5432,
 });
 
-// Test PostgreSQL connection
-pool.query('SELECT NOW()', (err, res) => {
-    if (err) {
-        console.error('Error connecting to PostgreSQL:', err.stack);
-    } else {
-        console.log('Connected to PostgreSQL at:', res.rows[0].now);
+// Route pour créer un utilisateur
+app.post('/api/users', async (req, res) => {
+  const { firstandlastname, username, email, password, sex, role } = req.body;
+
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const client = await pool.connect();
+    const queryText = 'INSERT INTO users (firstandlastname, username, email, password, sex, role) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *';
+    const values = [firstandlastname, username, email, hashedPassword, sex, role];
+    const result = await client.query(queryText, values);
+    const newUser = result.rows[0];
+    client.release();
+    res.status(201).json(newUser);
+  } catch (err) {
+    console.error('Error adding user to PostgreSQL:', err);
+    res.status(500).json({ error: 'Failed to add user' });
+  }
+});
+// Route pour récupérer tous les utilisateurs
+app.get('/api/users', async (req, res) => {
+  try {
+    const client = await pool.connect();
+    const result = await client.query('SELECT * FROM users');
+    const users = result.rows;
+    client.release();
+    res.json(users);
+  } catch (err) {
+    console.error('Erreur lors de la récupération des utilisateurs :', err);
+    res.status(500).json({ error: 'Erreur serveur lors de la récupération des utilisateurs' });
+  }
+});
+
+// Route pour gérer l'authentification (login)
+app.post('/api/users/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const client = await pool.connect();
+    const result = await client.query('SELECT * FROM users WHERE email = $1', [email]);
+    const user = result.rows[0];
+
+    if (!user) {
+      res.status(404).json({ error: 'User not found' });
+      return;
     }
-});
-app.get("/api/users", (req, res) => {
-    console.log("Bonjour");
-    pool.query('SELECT * FROM users', (err, res) => {
-        if (err) {
-            console.error('Error connecting to PostgreSQL:', err.stack);
-        } else {
-            console.log('users found', res.rows);
-        }
-    });
-});
 
-// Exemple de route pour créer un utilisateur
-app.post("/api/users", async (req, res) => {
-    const { name, lastname,username, email, password, sex, role } = req.body;
-
-    try {
-        // Hash the password securely
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        // Connect to the database
-        const client = await pool.connect();
-        
-        // SQL query to insert user data
-        const queryText = 'INSERT INTO users (name, lastname,username, email, password, sex, role) VALUES ($1, $2, $3, $4, $5, $6,$7) RETURNING *';
-        
-        // Prepare the values for the query
-        const values = [name, lastname,username, email, hashedPassword, sex, role];
-
-        // Log the values being inserted (optional)
-        console.log('Values for insert:', values);
-
-        // Execute the query
-        const result = await client.query(queryText, values);
-
-        // Get the newly created user from the result
-        const newUser = result.rows[0];
-
-        // Release the database connection
-        client.release();
-
-        // Send the response with the newly created user
-        res.status(201).json(newUser);
-
-    } catch (err) {
-        // Catch any errors that occur during the process
-        console.error('Error adding user to PostgreSQL:', err);
-        res.status(500).json({ error: 'Failed to add user' });
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (!passwordMatch) {
+      res.status(401).json({ error: 'Incorrect password' });
+      return;
     }
-});
-// BL login
-app.post("/api/users/login", async (req, res) => {
-    const { email, password } = req.body;
 
-    let client;
+    // Générer un token JWT pour l'utilisateur
+    const token = jwt.sign({ userId: user.id, username: user.username }, 'sami89', { expiresIn: '1h' });
 
-    try {
-        // Obtenir une connexion depuis le pool
-        client = await pool.connect();
-
-        // Rechercher l'utilisateur dans la base de données par email
-        const queryText = 'SELECT * FROM users WHERE email = $1';
-        const { rows } = await client.query(queryText, [email]);
-        const user = rows[0];
-
-        // Vérifier si l'utilisateur existe
-        if (!user) {
-            return res.status(404).json({ message: 'Utilisateur non trouvé' });
-        }
-
-        // Vérifier le mot de passe
-        const passwordMatch = await bcrypt.compare(password, user.password);
-        if (!passwordMatch) {
-            return res.status(401).json({ message: 'Mot de passe incorrect' });
-        }
-
-        // Générer un token JWT
-        const token = jwt.sign({ userId: user.id, email: user.email }, 'sami@1989', { expiresIn: '1h' });
-
-        // Utilisateur authentifié avec succès, retourner le token JWT
-        res.status(200).json({ token });
-
-    } catch (err) {
-        console.error('Erreur lors de la connexion :', err);
-        res.status(500).json({ message: 'Échec de la connexion' });
-    } finally {
-        // Libérer la connexion dans tous les cas
-        if (client) {
-            client.release();
-        }
-    }
+    client.release();
+    res.status(200).json({ token });
+  } catch (err) {
+    console.error('Login error:', err);
+    res.status(500).json({ error: 'Login failed' });
+  }
 });
 
 
-
-
-
+// Écoute du serveur sur le port spécifié
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Serveur en écoute sur http://localhost:${port}`);
 });

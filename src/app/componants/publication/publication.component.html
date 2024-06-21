@@ -48,10 +48,12 @@
             <figure>
                 <img src="assets/images/resources/friend-avatar10.jpg" alt="">
             </figure>
-            <div class="friend-name">
-                <ins><a href="time-line.html" title="">Janice Griffith</a></ins>
+            <div class="friend-name" >
+                @for(user of users;track user){
+                <ins><a routerLink="profil" title="">{{user.name}}</a></ins>}
                 <span>published: june,2 2018 19:PM</span>
             </div>
+        
             <div class="post-meta">
                 <img src="assets/images/resources/user-post.jpg" alt="">
                 <div class="we-video-info">

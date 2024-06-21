@@ -1,24 +1,29 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
-URL = 'http://localhost:3000/api/users'
-user:any
-  constructor(private httpClient:HttpClient) { }
+  private apiUrl = 'http://localhost:3000/api/users';
 
-  addUsers(user:any){
-  return this.httpClient.post<{message:any}>(user,this.URL)
+  constructor(private http: HttpClient) {}
+
+  getAllUsers(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
-  login(user: any) {
-    return this.httpClient.post<{message : string }>(this.URL + '/login', user);
+
+  addUser(user: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, user);
   }
-  getAllUser(){
-    this.httpClient.get<{message:any}>(this.URL)
+
+  login(user: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/login`, user);
   }
-  
+
+  getUserById(userId: number): Observable<any> {
+    const url = `${this.apiUrl}/${userId}`; // Endpoint pour récupérer un utilisateur par ID
+    return this.http.get<any>(url);
+  }
 }

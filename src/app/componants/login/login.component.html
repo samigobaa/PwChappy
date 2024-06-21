@@ -23,13 +23,13 @@
 							Don’t use PwC happy Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join
 								now</a>
 						</p>
-						<form method="post">
+						<form method="post" [formGroup]="loginForm">
 							<div class="form-group">
-								<input type="text" id="input" required="required" />
-								<label class="control-label" for="input">Username</label><i class="mtrl-select"></i>
+								<input type="text" id="input" required="required" formControlName="email"/>
+								<label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
 							</div>
 							<div class="form-group">
-								<input type="password" required="required" />
+								<input type="password" required="required" formControlName="password" />
 								<label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
 							</div>
 							<div class="checkbox">
@@ -53,38 +53,38 @@
 						</p>
 						<form method="post" [formGroup]="signuForm">
 							<div class="form-group">
-								<input type="text" formControlName="firstLastname" required="required" />
+								<input type="text" formControlName="firstandlastname" required="required" />
 								<label class="control-label" for="input">First & Last Name</label><i
 									class="mtrl-select"></i>
 							</div>
 							<div
-								*ngIf="((signuForm.controls['firstLastname'].invalid)&&(signuForm.controls['firstLastname'].touched || signuForm.controls['firstLastname'].dirty))">
-								<div *ngIf="signuForm.controls['firstLastname'].errors?.['required']"
+								*ngIf="((signuForm.controls['firstandlastname'].invalid)&&(signuForm.controls['firstandlastname'].touched || signuForm.controls['firstandlastname'].dirty))">
+								<div *ngIf="signuForm.controls['firstandlastname'].errors?.['required']"
 									class="errorMessage">
 									required *
 								</div>
 							</div>
 							<div class="form-group">
-								<input type="text" formControlName="userName" required="required" />
+								<input type="text" formControlName="username" required="required" />
 								<label class="control-label" for="input">User Name</label><i class="mtrl-select"></i>
 							</div>
 							<div
-								*ngIf="((signuForm.controls['userName'].invalid)&&(signuForm.controls['userName'].touched || signuForm.controls['userName'].dirty))">
-								<div *ngIf="signuForm.controls['userName'].errors?.['required']" class="errorMessage">
+								*ngIf="((signuForm.controls['username'].invalid)&&(signuForm.controls['username'].touched || signuForm.controls['username'].dirty))">
+								<div *ngIf="signuForm.controls['username'].errors?.['required']" class="errorMessage">
 									required *
 								</div>
 							</div>
 							<div class="form-group">
-								<input type="password" required="required" formControlName="userPassword" />
+								<input type="password" required="required" formControlName="password" />
 								<label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
 							</div>
 							<div
-								*ngIf="((signuForm.controls['userPassword'].invalid)&&(signuForm.controls['userPassword'].touched || signuForm.controls['userPassword'].dirty))">
-								<div *ngIf="signuForm.controls['userPassword'].errors?.['required']"
+								*ngIf="((signuForm.controls['password'].invalid)&&(signuForm.controls['password'].touched || signuForm.controls['password'].dirty))">
+								<div *ngIf="signuForm.controls['password'].errors?.['required']"
 									class="errorMessage">
 									required *
 								</div>
-								<div *ngIf="signuForm.controls['userPassword'].errors?.['pattern']"
+								<div *ngIf="signuForm.controls['password'].errors?.['pattern']"
 									class="errorMessage">
 									At least 8 characters in length,
 									Lowercase letters,
@@ -95,30 +95,30 @@
 							</div>
 							<div class="form-radio">
 								<div class="radio">
-									<label> 
-										<input type="radio" name="radio" checked="checked" /><i
-											class="check-box"></i>Male
-									</label>
+								  <label>
+									<input type="radio" formControlName="sex" value="Male" /><i class="check-box"></i>Male
+								  </label>
 								</div>
 								<div class="radio">
-									<label>
-										<input type="radio" name="radio" /><i class="check-box"></i>Female
-									</label>
+								  <label>
+									<input type="radio" formControlName="sex" value="Female" /><i class="check-box"></i>Female
+								  </label>
 								</div>
-							</div>
+							  </div>
 							<div class="form-group">
-								<input type="email" formControlName="userEmail" required="required" />
+								<input type="email" formControlName="email" required="required" />
 								<label class="control-label">Email</label><i class="mtrl-select"></i>
 							</div>
 							<div
-								*ngIf="((signuForm.controls['userEmail'].invalid)&&(signuForm.controls['userEmail'].touched || signuForm.controls['userEmail'].dirty))">
-								<div *ngIf="signuForm.controls['userEmail'].errors?.['required']" class="errorMessage">
+								*ngIf="((signuForm.controls['email'].invalid)&&(signuForm.controls['email'].touched || signuForm.controls['email'].dirty))">
+								<div *ngIf="signuForm.controls['email'].errors?.['required']" class="errorMessage">
 									required *
 								</div>
-								<div *ngIf="signuForm.controls['userEmail'].errors?.['email']" class="errorMessage">
+								<div *ngIf="signuForm.controls['email'].errors?.['email']" class="errorMessage">
 									Email error
 								</div>
 							</div>
+							
 							<div class="checkbox">
 								<label>
 									<input type="checkbox" checked="checked" /><i class="check-box"></i>Accept Terms &
