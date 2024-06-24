@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-shortcuts',
@@ -9,5 +9,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './shortcuts.component.css'
 })
 export class ShortcutsComponent {
+  constructor(private router:Router){}
+  logOut(){
+    sessionStorage.removeItem('token');
+this.router.navigate(['login'])
+  }
 
 }

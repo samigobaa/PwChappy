@@ -5,7 +5,8 @@ import { CommonModule } from '@angular/common';
 import { UsersService } from '../../services/users.service';
 import Swal from 'sweetalert2';
 import { Subscription } from 'rxjs';
-import jwtDecode from 'jwt-decode';
+import { jwtDecode } from "jwt-decode";
+
 
 @Component({
   selector: 'app-login',
@@ -42,9 +43,19 @@ export class LoginComponent {
       email: ['', [Validators.required, Validators.email]],
       role:['Employer']
     });
+    this.isLoggedIn();
+  
   }
 
-  
+  isLoggedIn(){
+    let token = sessionStorage.getItem('token');
+    if (token){
+      this.user = jwtDecode(token);
+      console.log('user conecte',this.user);
+      
+    }
+    return !!token;
+  }
 
   addUser(): void {
     if (this.signuForm.valid) {

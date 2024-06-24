@@ -25,17 +25,14 @@
             <i class="ti-video-camera"></i>
             <a routerLink="/videos" title="">videos</a>
         </li>
-        <li>
-            <i class="ti-comments-smiley"></i>
-            <a routerLink="/messages" title="">Messages</a>
-        </li>
+       
         <li>
             <i class="ti-bell"></i>
             <a routerLink="/notification" title="">Notifications</a>
         </li>
         <li>
             <i class="ti-power-off"></i>
-            <a href="landing.html" title="">Logout</a>
+            <button   class="btn btn-light " style="margin-top: -3%;" (click)="logOut()">Logout</button>
         </li>
     </ul>
 </div>

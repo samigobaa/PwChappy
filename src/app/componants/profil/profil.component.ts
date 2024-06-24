@@ -5,6 +5,9 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TimeLineComponent } from '../time-line/time-line.component';
 import { PhotosComponent } from '../photos/photos.component';
 import { ShortcutsComponent } from '../shortcuts/shortcuts.component';
+import { jwtDecode } from 'jwt-decode';
+import { PostsService } from '../../services/posts.service';
+import { Post } from '../../../../backend/models/post.model';
 
 @Component({
   selector: 'app-profil',
@@ -15,29 +18,49 @@ import { ShortcutsComponent } from '../shortcuts/shortcuts.component';
 })
 export class ProfilComponent {
   users : any =[]
+  userId:any
   user:any={}
+  posts:any;
   private loginSubscription: Subscription | undefined;
-  constructor(private userService:UsersService,private activateRouter:ActivatedRoute){}
+  constructor(private userService:UsersService,private activateRouter:ActivatedRoute,private postsService:PostsService){}
   
 
   ngOnInit(): void {
-    
-    // Récupère l'ID de l'utilisateur depuis les paramètres d'URL
-    const userId = this.activateRouter.snapshot.params['id'];
-console.log(userId);
-
-    // Appelle la méthode du service pour récupérer l'utilisateur par son ID
-    this.userService.getUserById(userId).subscribe(
-      (data) => {
-        this.user = data; // Affecte les données de l'utilisateur récupéré à la variable 'user'
+    const userIdParam = this.activateRouter.snapshot.paramMap.get('id');
+    console.log('userIdParam:', userIdParam);
+    if (userIdParam !== null && userIdParam !== undefined) {
+      this.userId = +userIdParam;
+      this.getUserPosts();
+    } else {
+      console.error('ID utilisateur non défini.');
+    }
+    this.isLoggedIn();
+    this.getUserPosts();
+  }
+  isLoggedIn(){
+    let token = sessionStorage.getItem('token');
+    if (token){
+      this.user = jwtDecode(token);
+      console.log('user conecte',this.user);
+      
+    }
+    return !!token;
+  }
+  getUserPosts(): void {
+    if (this.userId === null || this.userId === undefined) {
+      console.error('ID utilisateur non défini.');
+      return;
+    }
+  
+    this.postsService.getPostsByUser(this.userId).subscribe(
+      (data: Post[]) => {
+        this.posts = data;
       },
-      (error) => {
-        console.error('Erreur lors de la récupération de l\'utilisateur :', error);
+      (error: any) => {
+        console.error('Erreur lors de la récupération des publications de l\'utilisateur:', error);
       }
     );
   }
-  
-
 
 ngOnDestroy(): void {
   if (this.loginSubscription) {

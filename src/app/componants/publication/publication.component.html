@@ -4,8 +4,8 @@
             <img src="assets/images/resources/admin2.jpg" alt="">
         </figure>
         <div class="newpst-input">
-            <form method="post">
-                <textarea rows="2" placeholder="write something"></textarea>
+            <form method="post" [formGroup]="publishForm">
+                <textarea rows="2" placeholder="write something" formControlName="content"></textarea>
                 <div class="attachments">
                     <ul>
                         <li>
@@ -33,7 +33,7 @@
                             </label>
                         </li>
                         <li>
-                            <button type="submit">Post</button>
+                            <button type="submit" (click)="onPublish()">Post</button>
                         </li>
                     </ul>
                 </div>
@@ -45,17 +45,20 @@
 <div class="central-meta item">
     <div class="user-post">
         <div class="friend-info">
+            @for (post of posts; track $index) {
             <figure>
                 <img src="assets/images/resources/friend-avatar10.jpg" alt="">
             </figure>
             <div class="friend-name" >
-                @for(user of users;track user){
-                <ins><a routerLink="profil" title="">{{user.name}}</a></ins>}
-                <span>published: june,2 2018 19:PM</span>
+               
+                <ins><a routerLink="profil" title="">{{user.firstandlastname}}</a></ins>
+                <span>published: {{post.created_at}}</span>
             </div>
+            
         
             <div class="post-meta">
-                <img src="assets/images/resources/user-post.jpg" alt="">
+                
+                {{post.content}}
                 <div class="we-video-info">
                     <ul>
                         <li>
@@ -123,7 +126,9 @@
                         World's most beautiful car in Curabitur <a href="#" title="">#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website
                     </p>
                 </div>
+            
             </div>
+        }
         </div>
         <div class="coment-area">
             <ul class="we-comet">
@@ -133,7 +138,7 @@
                     </div>
                     <div class="we-comment">
                         <div class="coment-head">
-                            <h5><a href="time-line.html" title="">Jason borne</a></h5>
+                            <h5><a href="time-line.html" title="">{{user.username}}</a></h5>
                             <span>1 year ago</span>
                             <a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>
                         </div>

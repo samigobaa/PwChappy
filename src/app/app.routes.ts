@@ -16,6 +16,7 @@ import { GroupsComponent } from './componants/groups/groups.component';
 import { FriendsComponent } from './componants/friends/friends.component';
 import { PagesComponent } from './componants/pages/pages.component';
 import { NotificationComponent } from './componants/notification/notification.component';
+import { UpdateProfilComponent } from './componants/update-profil/update-profil.component';
 ;
 
 export const routes: Routes = [
@@ -33,7 +34,8 @@ export const routes: Routes = [
     {path:'groups',component:GroupsComponent},
     {path:'friends',component:FriendsComponent},
     {path:'pages',component:PagesComponent},
-    {path:'notification',component:NotificationComponent}
+    {path:'notification',component:NotificationComponent},
+    {path:'updateProfile',component:UpdateProfilComponent}
 
   
     
